@@ -15,8 +15,8 @@ class SimpleReport:
         manufacturing = self.get_manufacturing()
 
         return (
-            f"Oldest manufacturing date: {manufacturing}"
-            f"Closest expiration date: {expiration}"
+            f"Oldest manufacturing date: {manufacturing}\n"
+            f"Closest expiration date: {expiration}\n"
             f"Company with the largest inventory: {company}"
         )
 

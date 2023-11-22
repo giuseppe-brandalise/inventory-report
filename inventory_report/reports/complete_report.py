@@ -1,11 +1,10 @@
-from inventory_report.report.simple_report import SimpleReport
+from inventory_report.reports.simple_report import SimpleReport
 
 
 class CompleteReport(SimpleReport):
     def generate(self) -> str:
         return (
-            f"{super.generate()}"
-            f"Stocked products by company:"
+            f"{super().generate()}\n"
             f"{self.get_companies_stocked()}"
         )
 
@@ -19,7 +18,7 @@ class CompleteReport(SimpleReport):
                 else:
                     company_stocked[product.company_name] = 1
 
-        amount_per_company = ""
+        amount_per_company = "Stocked products by company:\n"
 
         for company, stocked in company_stocked.items():
             amount_per_company += f"- {company}: {stocked}\n"
